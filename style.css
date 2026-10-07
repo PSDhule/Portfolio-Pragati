@@ -26,16 +26,12 @@ body::before {
     inset: 0;
     pointer-events: none;
     background:
-        radial-gradient(
-            circle at 15% 20%,
+        radial-gradient(circle at 15% 20%,
             rgba(0, 238, 255, 0.07),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
+            transparent 25%),
+        radial-gradient(circle at 85% 80%,
             rgba(0, 238, 255, 0.05),
-            transparent 25%
-        );
+            transparent 25%);
     z-index: -1;
 }
 
@@ -535,12 +531,10 @@ section {
     border-radius: 50%;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #0ef,
             rgba(0, 238, 255, 0.1),
-            #0ef
-        );
+            #0ef);
 
     box-shadow:
         0 0 30px rgba(0, 238, 255, 0.22),
@@ -658,11 +652,9 @@ section {
     padding: 110px 7%;
 
     background:
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             #021e20,
-            #011819
-        );
+            #011819);
 }
 
 .about .content {
@@ -674,8 +666,7 @@ section {
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 0.8fr)
-        minmax(0, 1.2fr);
+        minmax(280px, 0.8fr) minmax(0, 1.2fr);
 
     align-items: center;
 
@@ -696,11 +687,9 @@ section {
     border-radius: 25px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(0, 238, 255, 0.7),
-            rgba(0, 238, 255, 0.04)
-        );
+            rgba(0, 238, 255, 0.04));
 
     box-shadow:
         0 0 30px rgba(0, 238, 255, 0.15);
@@ -776,7 +765,7 @@ section {
     margin-top: 25px;
 }
 
-.about-highlights > div {
+.about-highlights>div {
     min-height: 105px;
 
     display: flex;
@@ -799,7 +788,7 @@ section {
     transition: 0.35s ease;
 }
 
-.about-highlights > div:hover {
+.about-highlights>div:hover {
     transform: translateY(-7px);
 
     border-color: #0ef;
@@ -928,11 +917,9 @@ section {
     height: 100%;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #0aa,
-            #0ef
-        );
+            #0ef);
 
     border-radius: 20px;
 
@@ -994,11 +981,9 @@ section {
     border-radius: 25px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(0, 238, 255, 0.45),
-            rgba(0, 238, 255, 0.03)
-        );
+            rgba(0, 238, 255, 0.03));
 
     box-shadow:
         0 0 35px rgba(0, 238, 255, 0.13);
@@ -1034,11 +1019,9 @@ section {
     padding: 110px 7%;
 
     background:
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             #021e20,
-            #01191a
-        );
+            #01191a);
 }
 
 .projects-grid {
@@ -1518,11 +1501,9 @@ footer p {
     align-items: center;
 
     background:
-        radial-gradient(
-            circle at 80% 30%,
+        radial-gradient(circle at 80% 30%,
             rgba(0, 238, 255, 0.09),
-            transparent 35%
-        ),
+            transparent 35%),
         #021e20;
 }
 
@@ -1535,8 +1516,7 @@ footer p {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.35fr)
-        minmax(300px, 0.65fr);
+        minmax(0, 1.35fr) minmax(300px, 0.65fr);
 
     gap: 70px;
 
@@ -1595,7 +1575,7 @@ footer p {
     color: #0ef;
 }
 
-.about-page-text > p {
+.about-page-text>p {
     color: #d3eeee;
 
     font-size: 15px;
@@ -1706,7 +1686,7 @@ footer p {
     border-color: #0ef;
 }
 
-.about-info-card > i {
+.about-info-card>i {
     width: 42px;
     height: 42px;
 
@@ -1781,11 +1761,9 @@ footer p {
     border-radius: 30px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(0, 238, 255, 0.15),
-            rgba(0, 238, 255, 0.02)
-        );
+            rgba(0, 238, 255, 0.02));
 
     box-shadow:
         0 0 25px rgba(0, 238, 255, 0.25),
@@ -1844,6 +1822,61 @@ footer p {
 
     animation:
         floatingCard 3s ease-in-out infinite;
+}
+
+/* ===== NAVBAR VISIBILITY FIX ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 99999;
+}
+
+.header .logo {
+    display: inline-block;
+    flex-shrink: 0;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.header .navbar a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    visibility: visible;
+    opacity: 1;
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+    color: #0ef;
+}
+
+.header .menu-btn {
+    display: none;
+    color: #0ef;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 /* =========================================================
@@ -1930,8 +1963,16 @@ footer p {
 @media (max-width: 1000px) {
 
     .header {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 15px 3%;
+    }
+
+    .header .navbar {
+        gap: 0;
+    }
+
+    .header .navbar a {
+        padding: 10px 9px;
+        font-size: 14px;
     }
 
     .home {
@@ -1974,6 +2015,43 @@ footer p {
         min-height: 65px;
 
         padding: 11px 5%;
+    }
+
+    .header .logo {
+        font-size: 24px;
+    }
+
+    .header .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 5% 18px;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(1, 16, 17, 0.98);
+        border-bottom: 1px solid rgba(0, 238, 255, 0.2);
+    }
+
+    .header .navbar.active {
+        display: flex;
+    }
+
+    .header .navbar a {
+        display: block;
+        width: 100%;
+        padding: 13px 10px;
+        text-align: center;
+        font-size: 15px;
     }
 
     .logo {
@@ -2208,7 +2286,7 @@ footer p {
         right: 5%;
     }
 
-    .about-page-text > p {
+    .about-page-text>p {
         text-align: left;
     }
 
@@ -2333,7 +2411,7 @@ footer p {
         font-size: 17px;
     }
 
-    .about-page-text > p {
+    .about-page-text>p {
         font-size: 14px;
     }
 
